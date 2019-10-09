@@ -10,6 +10,22 @@ tags: Vim,VSCode
 1. VSCode is more friend to JavaScript which I'm using now.
 1. VSCode has lots of extensions.
 
-## Extensions you need.
+## VSCODE Extensions you need.
 1. Vim
 1. ESLint
+
+## Tools that may help
+
+1. [Chocolatey](https://chocolatey.org/) The package manager for windows, like brew on macOS and apt or yum on linux.
+
+1. [Cmder](https://cmder.net/) A Portable console emulator for Windows.
+
+1. Use Cmder as default terminal on VSCode. See <https://github.com/cmderdev/cmder/wiki/Seamless-VS-Code-Integration>
+
+## Vim extensions configs for me.
+
+set "jj" to back to normal mode. 
+
+<https://github.com/VSCodeVim/Vim>
+
+
