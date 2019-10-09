@@ -29,3 +29,8 @@ set "jj" to back to normal mode.
 <https://github.com/VSCodeVim/Vim>
 
 
+## Trobules fixed.
+1. Powershell and Cmder can't use the c:\Users\[YourUser]\.ssh, 
+Solution: copy .ssh to c:\Users\[YourUser]\.config\
+
+
