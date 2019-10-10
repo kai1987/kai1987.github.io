@@ -34,3 +34,9 @@ set "jj" to back to normal mode.
 Solution: copy .ssh to c:\Users\[YourUser]\.config\
 
 
+## IME
+SouGou English auto complete, when you are in Chinese mode. then use "shift + control + E" you can change to English mode with auto complete. so no worry for the vocabulary you can't spell.
+
+
+
+
