@@ -33,6 +33,11 @@ set "jj" to back to normal mode.
 1. Powershell and Cmder can't use the c:\Users\[YourUser]\.ssh, 
 Solution: copy .ssh to c:\Users\[YourUser]\.config\
 
+1. Vscode snippet not working for change placeholder word. it's because the vim extension changed the behavior of backspace.
+so change the config for keybinding.
+"Code"->"preference"->"Keyboard shortcuts"->"extension.vim_backspce" then left client the row chose "Change when Expression",
+  add "&& !editorHasSelection" in the end.
+
 
 ## IME
 SouGou English auto complete, when you are in Chinese mode. then use "shift + control + E" you can change to English mode with auto complete. so no worry for the vocabulary you can't spell.
