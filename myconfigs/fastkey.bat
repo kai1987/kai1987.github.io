@@ -1,0 +1,11 @@
+@doskey ls=dir $*
+@doskey l=dir /od/p/q/tw $*
+@doskey ..=cd ..
+@doskey ...=cd ../..
+@doskey ....=cd ../../..
+@doskey gs=git status $*
+@doskey ga=git add $*
+@doskey gp=git pull $*
+@doskey gci=git commit $*
+@doskey gcia=git commit -am $*
+@doskey gpush=git push $*

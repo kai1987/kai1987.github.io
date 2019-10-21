@@ -1,0 +1,6 @@
+[alias]
+	s = status
+	cm = 'commit -m '
+	co = checkout
+	br = branch
+	aa = 'add .'
