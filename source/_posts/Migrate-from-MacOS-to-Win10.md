@@ -18,4 +18,13 @@ tags: Win10,MacOS
 ### set alias
 
     see this https://blog.csdn.net/yiranzhiliposui/article/details/83116819
-    my alias is in this repo branch hexo. configs/
+    my alias is in this repo branch hexo. myconfigs/
+
+## Cmder with Autojump
+
+1. install autojump manuly.
+1. change alias in cmder, or copy it from myconfigs/. it local in you cmder installed path.
+1. fix bug on win64, replace the myconfigs/autojump_match.py to you autojump path.
+
+
+
