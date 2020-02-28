@@ -62,6 +62,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-centos-use-static-ip" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/28/centos-use-static-ip/" class="article-date">
+  <time datetime="2020-02-28T11:43:51.000Z" itemprop="datePublished">2020-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/28/centos-use-static-ip/">Centos 7 use static ip</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Centos7-Use-Static-Ip"><a href="#Centos7-Use-Static-Ip" class="headerlink" title="Centos7 Use Static Ip"></a>Centos7 Use Static Ip</h1><p>I use hyperv to create to new centos7 virtual machine, I want to use the old ip that I have.</p>
+<ul>
+<li>first to get the origin gateway,dns,netmask.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#get gateway</span><br><span class="line">route -n | grep &quot;^0.0.0.0&quot; | tr -s &quot; &quot; | cut -f2 -d&quot; &quot;</span><br><span class="line"></span><br><span class="line">#get dns</span><br><span class="line">cat /etc/resolv.conf</span><br><span class="line"></span><br><span class="line">#get netmask</span><br><span class="line"></span><br><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>then change the config</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0</span><br><span class="line"></span><br><span class="line">change BOOTPROTO and add</span><br><span class="line"></span><br><span class="line">IPADDR=xxxx</span><br><span class="line">GATEWAY=xxxx</span><br><span class="line">DNS1=xxxx</span><br><span class="line">DNS2=xxxx</span><br><span class="line">NETMASK=xxxx</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>restart the network, or you can just restart your virtual machine.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart network</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/02/28/centos-use-static-ip/" data-id="ck75nunht000431vwpzw8xeoj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-Centos/">Linux,Centos</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Migrate-from-MacOS-to-Win10" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/21/Migrate-from-MacOS-to-Win10/" class="article-date">
@@ -100,7 +154,7 @@ my alias is in this repo branch hexo. myconfigs/</code></pre><h2 id="Cmder-with-
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/21/Migrate-from-MacOS-to-Win10/" data-id="ck24a6l4j0000wuqcezsm6iem" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/21/Migrate-from-MacOS-to-Win10/" data-id="ck75nunhg000031vwzog2rdw7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Win10-MacOS/">Win10,MacOS</a></li></ul>
@@ -171,7 +225,7 @@ my alias is in this repo branch hexo. myconfigs/</code></pre><h2 id="Cmder-with-
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/10/Node-js-Refactored/" data-id="ck24a6l4x0003wuqcmtxssomh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/10/Node-js-Refactored/" data-id="ck75nunhr000331vwys5uox9d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js-Javascript/">Node.js,Javascript</a></li></ul>
@@ -235,7 +289,7 @@ my alias is in this repo branch hexo. myconfigs/</code></pre><h2 id="Cmder-with-
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/04/Migrate-from-Vim-to-VSCode/" data-id="ck24a6l4s0001wuqclvniy0dm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/04/Migrate-from-Vim-to-VSCode/" data-id="ck75nunhn000131vw831kxnym" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim-VSCode/">Vim,VSCode</a></li></ul>
@@ -260,7 +314,7 @@ my alias is in this repo branch hexo. myconfigs/</code></pre><h2 id="Cmder-with-
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js-Javascript/">Node.js,Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim-VSCode/">Vim,VSCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Win10-MacOS/">Win10,MacOS</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux-Centos/">Linux,Centos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js-Javascript/">Node.js,Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim-VSCode/">Vim,VSCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Win10-MacOS/">Win10,MacOS</a></li></ul>
     </div>
   </div>
 
@@ -270,7 +324,7 @@ my alias is in this repo branch hexo. myconfigs/</code></pre><h2 id="Cmder-with-
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Node-js-Javascript/" style="font-size: 10px;">Node.js,Javascript</a> <a href="/tags/Vim-VSCode/" style="font-size: 10px;">Vim,VSCode</a> <a href="/tags/Win10-MacOS/" style="font-size: 10px;">Win10,MacOS</a>
+      <a href="/tags/Linux-Centos/" style="font-size: 10px;">Linux,Centos</a> <a href="/tags/Node-js-Javascript/" style="font-size: 10px;">Node.js,Javascript</a> <a href="/tags/Vim-VSCode/" style="font-size: 10px;">Vim,VSCode</a> <a href="/tags/Win10-MacOS/" style="font-size: 10px;">Win10,MacOS</a>
     </div>
   </div>
 
@@ -279,7 +333,7 @@ my alias is in this repo branch hexo. myconfigs/</code></pre><h2 id="Cmder-with-
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
     </div>
   </div>
 
@@ -290,6 +344,10 @@ my alias is in this repo branch hexo. myconfigs/</code></pre><h2 id="Cmder-with-
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/02/28/centos-use-static-ip/">Centos 7 use static ip</a>
+          </li>
         
           <li>
             <a href="/2019/10/21/Migrate-from-MacOS-to-Win10/">Migrate from MacOS to Win10</a>
@@ -315,7 +373,7 @@ my alias is in this repo branch hexo. myconfigs/</code></pre><h2 id="Cmder-with-
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 John Doe<br>
+      &copy; 2020 John Doe<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
