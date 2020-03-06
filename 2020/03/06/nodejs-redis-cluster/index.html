@@ -5,20 +5,19 @@
   
 
   
-  <title>Migrate from Vim to VSCode | </title>
+  <title>nodejs,redis cluster | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="First Why? I joined a new company and I have to use Windows duraing work, the Vim in windows is not easy to use, so I decide to Migrate to VSCode. VSCode is more friend to JavaScript which I’m using n">
-<meta name="keywords" content="Vim,VSCode">
+  <meta name="description" content="there are different redis client for node.js, how to choose when you start a new project.  ioredis   A robust, performance-focused and full-featured Redis client for Node.js.   If you want to use redi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Migrate from Vim to VSCode">
-<meta property="og:url" content="http://yoursite.com/2019/10/04/Migrate-from-Vim-to-VSCode/index.html">
+<meta property="og:title" content="nodejs,redis cluster">
+<meta property="og:url" content="http://yoursite.com/2020/03/06/nodejs-redis-cluster/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="First Why? I joined a new company and I have to use Windows duraing work, the Vim in windows is not easy to use, so I decide to Migrate to VSCode. VSCode is more friend to JavaScript which I’m using n">
+<meta property="og:description" content="there are different redis client for node.js, how to choose when you start a new project.  ioredis   A robust, performance-focused and full-featured Redis client for Node.js.   If you want to use redi">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2020-03-06T07:13:38.357Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Migrate from Vim to VSCode">
-<meta name="twitter:description" content="First Why? I joined a new company and I have to use Windows duraing work, the Vim in windows is not easy to use, so I decide to Migrate to VSCode. VSCode is more friend to JavaScript which I’m using n">
+<meta name="twitter:title" content="nodejs,redis cluster">
+<meta name="twitter:description" content="there are different redis client for node.js, how to choose when you start a new project.  ioredis   A robust, performance-focused and full-featured Redis client for Node.js.   If you want to use redi">
   
     <link rel="alternate" href="/atom.xml" title type="application/atom+xml">
   
@@ -65,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Migrate-from-Vim-to-VSCode" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-nodejs-redis-cluster" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/10/04/Migrate-from-Vim-to-VSCode/" class="article-date">
-  <time datetime="2019-10-04T00:12:34.000Z" itemprop="datePublished">2019-10-04</time>
+    <a href="/2020/03/06/nodejs-redis-cluster/" class="article-date">
+  <time datetime="2020-03-06T14:54:23.000Z" itemprop="datePublished">2020-03-06</time>
 </a>
     
   </div>
@@ -79,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Migrate from Vim to VSCode
+      nodejs,redis cluster
     </h1>
   
 
@@ -87,56 +86,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="First-Why"><a href="#First-Why" class="headerlink" title="First Why?"></a>First Why?</h2><ol>
-<li>I joined a new company and I have to use Windows duraing work, the Vim in windows is not easy to use, so I decide to Migrate to VSCode.</li>
-<li>VSCode is more friend to JavaScript which I’m using now.</li>
-<li>VSCode has lots of extensions.</li>
-</ol>
-<h2 id="VSCODE-Extensions-you-need"><a href="#VSCODE-Extensions-you-need" class="headerlink" title="VSCODE Extensions you need."></a>VSCODE Extensions you need.</h2><ol>
-<li>Vim</li>
-<li>ESLint</li>
-</ol>
-<h2 id="Tools-that-may-help"><a href="#Tools-that-may-help" class="headerlink" title="Tools that may help"></a>Tools that may help</h2><ol>
-<li><p><a href="https://chocolatey.org/" target="_blank" rel="noopener">Chocolatey</a> The package manager for windows, like brew on macOS and apt or yum on linux.</p>
+        <p>there are different redis client for node.js, how to choose when you start a new project.</p>
+<ul>
+<li><p><a href="https://github.com/luin/ioredis#readme" target="_blank" rel="noopener">ioredis</a></p>
+<p>  A robust, performance-focused and full-featured Redis client for Node.js.</p>
+<p>  If you want to use redis cluster model or some redis service like AWS elastcache, use this one.</p>
 </li>
-<li><p><a href="https://cmder.net/" target="_blank" rel="noopener">Cmder</a> A Portable console emulator for Windows.</p>
+<li><p><a href="https://github.com/NodeRedis/node-redis" target="_blank" rel="noopener">node-redis or redis</a></p>
+<p>  most common used one.<br>  if you have old codebase and want to try cluster, you can try <a href="https://github.com/gosquared/redis-clustr" target="_blank" rel="noopener">redis-clustr</a>, but I think it’s not a good idea.</p>
 </li>
-<li><p>Use Cmder as default terminal on VSCode. See <a href="https://github.com/cmderdev/cmder/wiki/Seamless-VS-Code-Integration" target="_blank" rel="noopener">https://github.com/cmderdev/cmder/wiki/Seamless-VS-Code-Integration</a></p>
-</li>
-</ol>
-<h2 id="Vim-extensions-configs-for-me"><a href="#Vim-extensions-configs-for-me" class="headerlink" title="Vim extensions configs for me."></a>Vim extensions configs for me.</h2><p>set “jj” to back to normal mode. </p>
-<p><a href="https://github.com/VSCodeVim/Vim" target="_blank" rel="noopener">https://github.com/VSCodeVim/Vim</a></p>
-<h2 id="Trobules-fixed"><a href="#Trobules-fixed" class="headerlink" title="Trobules fixed."></a>Trobules fixed.</h2><ol>
-<li><p>Powershell and Cmder can’t use the c:\Users[YourUser].ssh,<br>Solution: copy .ssh to c:\Users[YourUser].config\</p>
-</li>
-<li><p>Vscode snippet not working for change placeholder word. it’s because the vim extension changed the behavior of backspace.<br>so change the config for keybinding.<br>“Code”-&gt;”preference”-&gt;”Keyboard shortcuts”-&gt;”extension.vim_backspce” then left client the row chose “Change when Expression”,<br>add “&amp;&amp; !editorHasSelection” in the end.</p>
-</li>
-</ol>
-<h2 id="IME"><a href="#IME" class="headerlink" title="IME"></a>IME</h2><p>SouGou English auto complete, when you are in Chinese mode. then use “shift + control + E” you can change to English mode with auto complete. so no worry for the vocabulary you can’t spell.</p>
+</ul>
+<hr>
+<p>know problem with node-redis on aws elastcache</p>
+<p><a href="https://aws.amazon.com/cn/premiumsupport/knowledge-center/elasticache-crossslot-keys-error-redis/" target="_blank" rel="noopener">CROSSSLOT Keys in request don’t hash to the same slot</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/04/Migrate-from-Vim-to-VSCode/" data-id="ck7fueuq70001yxsb4g4iatur" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/06/nodejs-redis-cluster/" data-id="ck7fueuqc0005yxsbb1f3r277" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim-VSCode/">Vim,VSCode</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2019/10/10/Node-js-Refactored/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Node.js Refactored
-        
-      </div>
-    </a>
   
+    <a href="/2020/02/28/centos-use-static-ip/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Centos 7 use static ip</div>
+    </a>
   
 </nav>
 
