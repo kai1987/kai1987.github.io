@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+  <style>
+    body,input,button {
+      font-size: 40px;
+    }
+ </style>    
+    </head>
+    <body>
+        <input id="max" value="20"/>以内的加法
+        <br/>
+        <br/>
+        <input id="a" value=""/>
+        +
+        <input id="b" value=""/>
+        =
+        <input id="result" value=""/>
+
+        <button id="check">检查</button>
+        <br/>
+        <button id="oneMore">再来一题</button>
+        <br/>
+        <button id="addErrors">错题集</button>
+
+        <div id="addErrorItems">
+        </div>
+    </body>
+        <script>
+            randomFunc=function(){
+                let max=parseInt($("#max").val())
+                let a = Math.ceil(Math.random()*max)
+                let b = Math.ceil(Math.random()*(max-a))
+
+                $("#a").val(a)
+                $("#b").val(b)
+                $("#result").val("")
+                $("#result").focus()
+
+            }
+            $("#check").click(function(){
+                if (parseInt($("#a").val())+parseInt($("#b").val()) == parseInt($("#result").val())){
+                    alert("一一你答对了，真棒!")
+                    randomFunc()
+                }else{
+                    let addErrors = JSON.parse(localStorage.getItem("addErrors")) || []
+                    addErrors.push(`${$("#a").val()}+${$("#b").val()}=${$("#result").val()}`)
+                    
+                    localStorage.setItem("addErrors",JSON.stringify(addErrors))
+                    alert("哎呀，一一,再想一想")
+                }
+            });
+            randomFunc()
+            $("#oneMore").click(randomFunc)
+            $("#addErrors").click(function(){
+                let addErrors = JSON.parse(localStorage.getItem("addErrors")) || []
+
+                alert(addErrors)
+                //$("addErrorItems").val(addErrors)
+                
+            })
+        </script>
+
+</html>
