@@ -1,132 +1,128 @@
 <html>
-
-<head>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
     <style>
-        body,
-        input,
-        button {
-            font-size: 40px;
-        }
+      body,
+      input,
+      button {
+        font-size: 40px;
+      }
 
-        .your-class input {
-            float: center;
-        }
+      .your-class input {
+        float: center;
+      }
 
-        .myform {
-            display: flex;
-            /* 2. display flex to the rescue */
-            flex-direction: row;
-        }
+      .myform {
+        display: flex;
+        /* 2. display flex to the rescue */
+        flex-direction: row;
+      }
 
-        .wrong {
-            color: rgb(214, 112, 207);
-        }
+      .wrong {
+        color: rgb(214, 112, 207);
+      }
 
-        .right {
-            color: green;
-        }
+      .right {
+        color: green;
+      }
 
-
-        label,
-        input {
-            display: block;
-            /* 1. oh noes, my inputs are styled as block... */
-        }
+      label,
+      input {
+        display: block;
+        /* 1. oh noes, my inputs are styled as block... */
+      }
     </style>
     <script>
-        let timer = null
-        check = function () {
-            if (timer) {
-                window.clearTimeout(timer);
-            }
-            let left = $("#a").val() + $("#symbol").text() + $("#b").val()
-            if (eval(left) == parseInt($("#result").val())) {
-                $("#result").addClass("right")
-                $("#successCount").text(parseInt($("#successCount").text()) + 1)
-
-                setTimeout(randomFunc, 1000)
-            } else {
-                let addErrors = JSON.parse(localStorage.getItem("addErrors")) || []
-                addErrors.push(`${left}=${$("#result").val()}`)
-                localStorage.setItem("addErrors", JSON.stringify(addErrors))
-                $("#result").addClass("wrong")
-                setTimeout(function () {
-                    $("#result").removeClass("wrong")
-                    $("#result").val("")
-                }, 1000)
-            }
-        }
-        randomFunc = function () {
-            let symbol = Math.random() < 0.5 ? "+" : "-"
-            let max = parseInt($("#max").val())
-            let a = Math.ceil(Math.random() * max)
-            let b = 0
-            if (symbol == "+") {
-                b = Math.ceil(Math.random() * (max - a))
-            } else {
-                b = Math.ceil(Math.random() * (a))
-            }
-
-            $("#symbol").text(symbol)
-            $("#a").val(a)
-            $("#b").val(b)
-
-            $("#result").removeClass()
-            $("#result").val("")
-            $("#result").focus()
-
-        }
-    </script>
-</head>
-
-<body>
-    <div class="myform">
-        <input id="max" value="20" size="3" />
-        <div>以内的加减法,答对了:&nbsp; </div>
-        <div id="successCount">0</div>
-    </div>
-    <div class="myform">
-        <input id="a" value="" maxlength="3" size="3" />
-        &nbsp;
-        <div id="symbol"></div>
-        &nbsp;
-        <input id="b" value="" maxlength="3" size="3" />
-        &nbsp;
-        =
-        &nbsp;
-        <input id="result" type="number" value="" maxlength="3" size="3" />
-        &nbsp;
-        <button id="check">检查</button>
-        &nbsp;
-        <button id="addErrors">错题集</button>
-    </div>
-</body>
-<script>
-    $("#result").on('blur', check);
-    $("#result").on('keyup', function (e) {
-        if (e.key === 'Enter' || e.keyCode === 13) {
-            window.clearTimeout(timer);
-            check()
-            return
-        }
+      let timer = null;
+      check = function () {
         if (timer) {
-            window.clearTimeout(timer);
+          window.clearTimeout(timer);
         }
-        timer = window.setTimeout(function () {
-            timer = null;
-            check();
-        }, 2000);
+        let left = $("#a").val() + $("#symbol").text() + $("#b").val();
+        if (eval(left) == parseInt($("#result").val())) {
+          $("#result").addClass("right");
+          $("#successCount").text(parseInt($("#successCount").text()) + 1);
 
+          setTimeout(randomFunc, 1000);
+        } else {
+          let addErrors = JSON.parse(localStorage.getItem("addErrors")) || [];
+          addErrors.push(`${left}=${$("#result").val()}`);
+          localStorage.setItem("addErrors", JSON.stringify(addErrors));
+          $("#result").addClass("wrong");
+          setTimeout(function () {
+            $("#result").removeClass("wrong");
+            $("#result").val("");
+          }, 1000);
+        }
+      };
+      randomFunc = function () {
+        let symbol = Math.random() < 0.5 ? "+" : "-";
+        let max = parseInt($("#max").val());
+        let a = Math.ceil(Math.random() * max);
+        let b = 0;
+        if (symbol == "+") {
+          b = Math.ceil(Math.random() * (max - a));
+        } else {
+          b = Math.ceil(Math.random() * a);
+        }
+
+        $("#symbol").text(symbol);
+        $("#a").val(a);
+        $("#b").val(b);
+
+        $("#result").removeClass();
+        $("#result").val("");
+        $("#result").focus();
+      };
+    </script>
+  </head>
+
+  <body>
+    <div class="myform">
+      <input id="max" value="20" size="3" min="20" type="number" />
+      <div>以内的加减法,答对了:&nbsp;</div>
+      <div id="successCount">0</div>
+    </div>
+    <div class="myform">
+      <input id="a" value="" maxlength="3" size="3" />
+      &nbsp;
+      <div id="symbol"></div>
+      &nbsp;
+      <input id="b" value="" maxlength="3" size="3" />
+      &nbsp; = &nbsp;
+      <input id="result" type="number" value="" maxlength="3" size="3" />
+      &nbsp;
+      <button id="check">检查</button>
+      &nbsp;
+      <button id="addErrors">错题集</button>
+    </div>
+  </body>
+  <script>
+    $("#result").on("blur", check);
+    $("#result").on("keyup", function (e) {
+      if (e.key === "Enter" || e.keyCode === 13) {
+        window.clearTimeout(timer);
+        check();
+        return;
+      }
+      if (timer) {
+        window.clearTimeout(timer);
+      }
+      timer = window.setTimeout(function () {
+        timer = null;
+        check();
+      }, 2000);
     });
     $("#check").click(check);
-    randomFunc()
-    $("#oneMore").click(randomFunc)
+    randomFunc();
+    $("#oneMore").click(randomFunc);
     $("#addErrors").click(function () {
-        let addErrors = JSON.parse(localStorage.getItem("addErrors")) || []
-        alert(addErrors)
-    })
-</script>
-
+      let addErrors = JSON.parse(localStorage.getItem("addErrors")) || [];
+      alert(addErrors);
+    });
+  </script>
 </html>
