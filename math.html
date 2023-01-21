@@ -84,6 +84,7 @@
   <body>
     <div class="myform">
       <select id="max">
+        <option value="10">10</option>
         <option value="20">20</option>
         <option value="50">50</option>
         <option value="100">100</option>
@@ -140,7 +141,7 @@
       if (seconds < 60) {
         text = `${seconds}秒`;
       } else {
-        text = `${seconds / 60}分${seconds % 60}秒`;
+        text = `${Math.ceil(seconds / 60)}分${seconds % 60}秒`;
       }
       $("#timeCost").text(text);
     }, 5000);
